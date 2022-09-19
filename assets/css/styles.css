@@ -1,0 +1,63 @@
+.hero {
+    background-image: url("../images/mountains/cadillac.jpeg");
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*
+Set some common styles for the body of the page
+ - backgroud color to bropwn
+ - text color to white
+ - font to helvetica
+ - font size to 16px
+*/
+body {
+  background-color: rgb(84, 77, 153);
+  color: white;
+  font-family:  Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+/*
+ target the table element 
+  - give a 2px black solid border to the table
+  - collapse the border to remove spacing between cells
+  - make the width 100%
+*/
+table{
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+/*
+ target the tr, td, and th elements
+  - give a 2px black solid border to the table
+*/
+tr,td,th{
+  border: 2px solid black;
+}
+
+/*
+ target the th element 
+  - set the background color to black
+  - set the text color to white
+*/
+th{
+  text-align: center;
+  color: brown;
+}
+
+/*
+Target the tr element
+ - set font to black
+ */
+tr{
+  color:black;
+}
+
+
+
