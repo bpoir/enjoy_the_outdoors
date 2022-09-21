@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    
+    <!-- Including the bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!--Include our global css file-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>National Parks</title>
+</head>
+
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Park Searcher</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page"></a>
+                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link" href="np.html">National Parks</a>
+                    <a class="nav-link" href="mountains.html">Mountains</a>
+
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- Main Section for the heading, brief description of the page, radio buttons for search type, 
+        and drop down for the selected search type. Also contains the section to hold cards for the Parks -->
+        <main class="container p-3">
+            <h2 class="p-2">Explore Our National Parks</h2>
+            <p>Choose from the list below as to the type of park, or location of pary that you would like to visit.</p>
+         
+            <!-- Begin 'Search By' Radio Buttons-->
+            <div id="searchOptionDiv" class="form-group">
+                <label class="d-block">Search By: </label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="searchRadios" id="searchLocationRadio"
+                        value="location" checked>
+                    <label class="form-check-label" for="searchLocationRadio">Location</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="searchRadios" id="searchTypeRadio" value="type">
+                    <label class="form-check-label" for="searchTypeRadio">Type</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="searchRadios" id="viewAllRadio" value="all">
+                    <label class="form-check-label" for="viewAllRadio">View All</label>
+                </div>
+            </div>
+    
+            <!-- Begin Search DDLs.  Only one will be visible at a given time. -->
+            <div id="locationSelectionDiv" class="form-group">
+                <label for="parkLocationsDDL">Select a Location</label>
+                <select class="form-control" id="parkLocationsDDL">
+                </select>
+            </div>
+            <div id="typeSelectionDiv" class="form-group">
+                <label for="parkTypesDDL">Select a Park Type</label>
+                <select class="form-control" id="parkTypesDDL">
+                </select>
+            </div>
+    
+            <!-- Output Section to hold bootstrap cards for each park-->
+            <div id="parkOutputDiv" class="d-flex flex-wrap justify-content-center">
+            </div>
+        </main>
+    
+        <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+    
+        <!-- National Parks Page's Javascript -->
+        <script src="/assets/scripts/parks.js"></script>
+    
+        <!-- Begin Footer -->
+        <footer class="container pt-2">
+            <div class="text-left">&copy; BP</div>
+        </footer>
+    </body>
+    
+    </html>

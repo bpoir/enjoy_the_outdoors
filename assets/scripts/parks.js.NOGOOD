@@ -1,0 +1,266 @@
+"use strict";
+let c = [];
+let d = [];
+let a = [];
+window.onload = function () {
+  $.getJSON("../assets/data/nationalparks.json", function (e) {
+    a = e.parks;
+    console.log(e)
+  $.getJSON("../assets/data/locations.json", function (e) {
+      c = e;
+    });
+  $.getJSON("../assets/data/parktypes.json", function (e) {
+      d = e;
+    });
+  });
+  const e = document.getElementById("filterDDL");
+  e.onchange = i;
+ console.log(e)
+  const t = document.getElementById("chosenFilterDDL");
+  t.onchange = s;
+  const n = document.getElementById("viewAllBtn");
+  n.onclick = m;
+  const l = document.getElementById("hideAllBtn");
+  l.onclick = r;
+  const o = document.getElementById("contactInfo");
+  o.onclick = u;
+};
+function i() {
+  const e = document.getElementById("filterDDL");
+  let t = e.value;
+  y();
+  const n = document.getElementById("viewAllBtn");
+  n.classList.remove("d-none");
+  const l = document.getElementById("hideAllBtn");
+  l.classList.add("d-none");
+  if (t === "By location:") {
+    h(c);
+    p();
+  } else if (t === "By park type:") {
+    h(d);
+    p();
+  } else {
+    const o = document.getElementById("chosenFilterDDL");
+    o.classList.add("d-none");
+    p();
+  }
+}
+function s() {
+  const e = document.getElementById("filterDDL");
+  let t = e.value;
+  const n = document.getElementById("chosenFilterDDL");
+  let l = n.value;
+  if (l === "Select one:") {
+    y();
+    const o = document.getElementById("viewAllBtn");
+    o.classList.remove("d-none");
+    const c = document.getElementById("hideAllBtn");
+    c.classList.add("d-none");
+    p();
+  } else {
+    let e;
+    if (t === "By location:") {
+      e = a.filter((e) => e.State === l);
+    } else {
+      e = a.filter((e) =>
+        e.LocationName.toLowerCase().includes(l.toLowerCase())
+      );
+    }
+    y();
+    if (e.length == 0) {
+      const i = document.getElementById("tableContainer");
+      i.innerHTML = "NO MATCHES FOUND";
+      return;
+    }
+    L();
+    B();
+    I(e);
+    const d = document.getElementById("contactInfo");
+    d.checked = false;
+    f();
+  }
+}
+function m() {
+  y();
+  L();
+  B();
+  I(a);
+  const e = document.getElementById("filterDDL");
+  e.value = "";
+  const t = document.getElementById("chosenFilterDDL");
+  t.classList.add("d-none");
+  const n = document.getElementById("hideAllBtn");
+  n.classList.remove("d-none");
+  const l = document.getElementById("viewAllBtn");
+  l.classList.add("d-none");
+  f();
+}
+function r() {
+  y();
+  const e = document.getElementById("filterDDL");
+  e.value = "";
+  const t = document.getElementById("hideAllBtn");
+  t.classList.add("d-none");
+  const n = document.getElementById("viewAllBtn");
+  n.classList.remove("d-none");
+  const l = document.getElementById("chosenFilterDDL");
+  l.classList.add("d-none");
+  p();
+}
+function u() {
+  const e = document.getElementById("contactInfo");
+  if (e.checked === true) {
+    const l = document.getElementById("filterDDL");
+    let t = l.value;
+    const o = document.getElementById("chosenFilterDDL");
+    let n = o.value;
+    if (n === "Select One:") {
+      y();
+    } else {
+      let e;
+      if (t === "By location:") {
+        e = a.filter((e) => e.State === n);
+      } else {
+        e = a.filter((e) =>
+          e.LocationName.toLowerCase().includes(n.toLowerCase())
+        );
+      }
+      y();
+      if (e.length == 0) {
+        const c = document.getElementById("tableContainer");
+        c.innerHTML = "NOTHING TO SHOW WHY DID YOU CLICK THIS";
+        return;
+      }
+      L();
+      E();
+      g(e);
+    }
+  } else {
+    s();
+  }
+}
+function L() {
+  let e = document.createElement("table");
+  e.id = "parkDataTable";
+  e.className = "table table-striped";
+  const t = document.getElementById("tableContainer");
+  t.appendChild(e);
+}
+function B() {
+  let e = document.getElementById("parkDataTable");
+  let t = document.createElement("tr");
+  let n = document.createElement("th");
+  n.innerHTML = "Location Name";
+  let l = document.createElement("th");
+  l.innerHTML = "Address";
+  let o = document.createElement("th");
+  o.innerHTML = "City";
+  let c = document.createElement("th");
+  c.innerHTML = "State";
+  let d = document.createElement("th");
+  d.innerHTML = "Location ID";
+  t.appendChild(n);
+  t.appendChild(l);
+  t.appendChild(o);
+  t.appendChild(c);
+  t.appendChild(d);
+  e.appendChild(t);
+}
+function E() {
+  let e = document.getElementById("parkDataTable");
+  let t = document.createElement("tr");
+  let n = document.createElement("th");
+  n.innerHTML = "Location Name";
+  let l = document.createElement("th");
+  l.innerHTML = "Address";
+  let o = document.createElement("th");
+  o.innerHTML = "City";
+  let c = document.createElement("th");
+  c.innerHTML = "State";
+  let d = document.createElement("th");
+  d.innerHTML = "Location ID";
+  let i = document.createElement("th");
+  i.innerHTML = "Phone Number";
+  let a = document.createElement("th");
+  a.innerHTML = "Fax Number";
+  t.appendChild(n);
+  t.appendChild(l);
+  t.appendChild(o);
+  t.appendChild(c);
+  t.appendChild(d);
+  t.appendChild(i);
+  t.appendChild(a);
+  e.appendChild(t);
+}
+function h(n) {
+  const l = document.getElementById("chosenFilterDDL");
+  l.classList.remove("d-none");
+  l.innerHTML = "";
+  let e = new Option("Select one:");
+  l.appendChild(e);
+  let o = n.length;
+  for (let t = 0; t < o; t++) {
+    let e = new Option(n[t]);
+    l.appendChild(e);
+  }
+}
+function I(i) {
+  let a = document.getElementById("parkDataTable");
+  let e = i.length;
+  for (let d = 0; d < e; d++) {
+    let e = a.insertRow(-1);
+    let t = e.insertCell(0);
+    t.innerHTML = i[d].LocationName;
+    let n = e.insertCell(1);
+    n.innerHTML = i[d].Address;
+    let l = e.insertCell(2);
+    l.innerHTML = i[d].City;
+    let o = e.insertCell(3);
+    o.innerHTML = i[d].State;
+    let c = e.insertCell(4);
+    c.innerHTML = i[d].LocationID;
+  }
+  const t = document.getElementById("viewAllBtn");
+  t.classList.add("d-none");
+  const n = document.getElementById("hideAllBtn");
+  n.classList.remove("d-none");
+}
+function g(s) {
+  let m = document.getElementById("parkDataTable");
+  let e = s.length;
+  for (let a = 0; a < e; a++) {
+    let e = m.insertRow(-1);
+    let t = e.insertCell(0);
+    t.innerHTML = s[a].LocationName;
+    let n = e.insertCell(1);
+    n.innerHTML = s[a].Address;
+    let l = e.insertCell(2);
+    l.innerHTML = s[a].City;
+    let o = e.insertCell(3);
+    o.innerHTML = s[a].State;
+    let c = e.insertCell(4);
+    c.innerHTML = s[a].LocationID;
+    let d = e.insertCell(5);
+    d.innerHTML = s[a].Phone;
+    let i = e.insertCell(6);
+    i.innerHTML = s[a].Fax;
+  }
+  const t = document.getElementById("viewAllBtn");
+  t.classList.add("d-none");
+  const n = document.getElementById("hideAllBtn");
+  n.classList.remove("d-none");
+}
+function y() {
+  let e = document.getElementById("tableContainer");
+  e.innerHTML = "";
+}
+function f() {
+  const e = document.getElementById("contactInfoDiv");
+  e.classList.remove("d-none");
+}
+function p() {
+  const e = document.getElementById("contactInfoDiv");
+  e.classList.add("d-none");
+  const t = document.getElementById("contactInfo");
+  t.checked = false;
+}

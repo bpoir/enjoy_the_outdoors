@@ -1,9 +1,17 @@
-.hero {
+/**/
+#heroSearch {
     background-image: url("../images/mountains/cadillac.jpeg");
-    height: 800px;
-    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
     background-size: cover;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Rajdhani', sans-serif;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: -webkit-fill-available;
 }
 
 /*
@@ -19,45 +27,73 @@ body {
   font-family:  Helvetica, sans-serif;
   font-size: 16px;
 }
-
-/*
- target the table element 
-  - give a 2px black solid border to the table
-  - collapse the border to remove spacing between cells
-  - make the width 100%
-*/
-table{
-  border: 2px solid black;
-  border-collapse: collapse;
-  width: 100%;
-  background-color: white;
+main {
+  background-color: #CAF0F8;
+  color: #03045E;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-/*
- target the tr, td, and th elements
-  - give a 2px black solid border to the table
-*/
-tr,td,th{
-  border: 2px solid black;
-}
-
-/*
- target the th element 
-  - set the background color to black
-  - set the text color to white
-*/
-th{
+h2 {
   text-align: center;
-  color: brown;
+  font-size: 2.5em;
+  font-weight: bold;
 }
 
-/*
-Target the tr element
- - set font to black
- */
-tr{
-  color:black;
+h3 {
+  text-align: center;
 }
+
+/* Header items below are for the title and nav bar */
+header h1 {
+  color: #48CAE4;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+header a {
+  color: white;
+  font-size: 1.5em;
+  font-family: 'Amiko', sans-serif;
+}
+
+header a:hover,
+header a.active {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #ffffff;
+}
+
+footer {
+  background-color: #CAF0F8;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+blockquote,
+blockquote footer {
+  background: #f9f9f9;
+  background-color: #CAF0F8;
+}
+
+blockquote {
+  font-size: 1.0em !important;
+  color: #0077B6;
+}
+
+.card {
+  width: 25rem !important;
+  min-height: 250px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+
 
 
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountains</title>
+    
+    <!-- Including the bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!--Include our global css file-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+  
+  
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Park Searcher</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active" aria-current="page"></a>
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="np.html">National Parks</a>
+                        <a class="nav-link" href="mountains.html">Mountains</a>
+    
+                       
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+ <!-- Main Section for the heading, brief description, dropdown, and mountain details -->
+ <main class="container p-3">
+    <h2 class="p-2">Explore The Mountains</h2>
+    <p>Exploring the mountains are a great way to spend your time outdoors.  Whether you're hiking for fun, attempting a new world record, or just camping near the base.</p>
+    <p>Use our Mountain Exploration tool to learn about each mountain.</p>
+
+    <!-- Dropdown to select a mountain -->
+    <div id="mountainSelectionDiv" class="form-group">
+        <label for="mountainsDDL">Select a Mountain</label>
+        <select class="form-control" id="mountainsDDL">
+        </select>
+    </div>
+
+    <!-- Mountain Detail output section -->
+    <div id="mountainOutputDiv">
+    </div>
+</main>
+
+<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+
+<!-- Mountains Page's Javascript -->
+<script src="assets/scripts/mountains.js"></script>
+
+<!-- Begin Footer -->
+<footer class="container pt-2">
+    <div class="text-left">&copy; 2021 Outdoor Advocate Society</div>
+</footer>
+
+
+       
+       
+
+   
+  
+</body>
+</html>
