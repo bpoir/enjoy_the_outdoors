@@ -1,7 +1,4 @@
 "use strict";
-//let c = [];
-//let i = [];
-//let d = [];
 
 let locationsArray = []
 let nationalParksArray = []
