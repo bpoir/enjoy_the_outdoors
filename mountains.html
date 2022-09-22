@@ -42,19 +42,23 @@
 
  <!-- Main Section for the heading, brief description, dropdown, and mountain details -->
  <main class="container p-3">
-    <h2 class="p-2">Explore The Mountains</h2>
-    <p>Exploring the mountains are a great way to spend your time outdoors.  Whether you're hiking for fun, attempting a new world record, or just camping near the base.</p>
-    <p>Use our Mountain Exploration tool to learn about each mountain.</p>
+    <div id = "newColor">
+      <h2 class="p-2">Explore The Mountains</h2>
+      <p>Exploring the mountains are a great way to spend your time outdoors.  Whether you're hiking for fun, attempting a new world record, or just camping near the base.</p>
+      <p>Use our Mountain Exploration tool to learn about each mountain.</p>
 
-    <!-- Dropdown to select a mountain -->
-    <div id="mountainSelectionDiv" class="form-group">
-        <label for="mountainsDDL">Select a Mountain</label>
-        <select class="form-control" id="mountainsDDL">
-        </select>
-    </div>
+      <!-- Dropdown to select a mountain -->
+  
+        
+          <label for="mountainsDDL">Select a Mountain</label>
+          <select class="form-control" id="mountainsDDL">
+            </select>
+    
 
     <!-- Mountain Detail output section -->
-    <div id="mountainOutputDiv">
+    <div id="mountainOutputDiv" class="d-flex flex-wrap justify-content-center">
+    
+    </div>
     </div>
 </main>
 
@@ -68,10 +72,6 @@
 <!-- Mountains Page's Javascript -->
 <script src="assets/scripts/mountains.js"></script>
 
-<!-- Begin Footer -->
-<footer class="container pt-2">
-    <div class="text-left">&copy; 2021 Outdoor Advocate Society</div>
-</footer>
 
 
        

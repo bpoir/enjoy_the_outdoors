@@ -41,7 +41,8 @@
         <!-- Main Section for the heading, brief description of the page, radio buttons for search type, 
         and drop down for the selected search type. Also contains the section to hold cards for the Parks -->
         <main class="container p-3">
-            <h2 class="p-2">Explore Our National Parks</h2>
+            <div id = "newColor">
+            <h2 class="p-2">National Parks Explorer</h2>
             <p>Choose from the list below as to the type of park, or location of pary that you would like to visit.</p>
          
             <!-- Begin 'Search By' Radio Buttons-->
@@ -61,7 +62,7 @@
                     <label class="form-check-label" for="viewAllRadio">View All</label>
                 </div>
             </div>
-    
+
             <!-- Begin Search DDLs.  Only one will be visible at a given time. -->
             <div id="locationSelectionDiv" class="form-group">
                 <label for="parkLocationsDDL">Select a Location</label>
@@ -72,6 +73,7 @@
                 <label for="parkTypesDDL">Select a Park Type</label>
                 <select class="form-control" id="parkTypesDDL">
                 </select>
+            </div>
             </div>
     
             <!-- Output Section to hold bootstrap cards for each park-->
@@ -89,10 +91,7 @@
         <!-- National Parks Page's Javascript -->
         <script src="/assets/scripts/parks.js"></script>
     
-        <!-- Begin Footer -->
-        <footer class="container pt-2">
-            <div class="text-left">&copy; BP</div>
-        </footer>
+     
     </body>
     
     </html>

@@ -1,4 +1,4 @@
-/**/
+/*
 #heroSearch {
     background-image: url("../images/mountains/cadillac.jpeg");
     height: 500px;
@@ -22,17 +22,28 @@ Set some common styles for the body of the page
  - font size to 16px
 */
 body {
+  /*
   background-color: rgb(84, 77, 153);
-  color: white;
+  
   font-family:  Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 16px;  
+  
+  */
+  background-image: url("../images/mountains/cadillac.jpeg");
+  color: white;
+
 }
+
 main {
-  background-color: #CAF0F8;
+  
   color: #03045E;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+#newColor{
+  color: white
+}
+
 
 h2 {
   text-align: center;
@@ -71,6 +82,7 @@ footer {
   background-color: #CAF0F8;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+
 }
 
 blockquote,
@@ -92,7 +104,13 @@ blockquote {
 .card-title {
   font-size: 1.2rem;
 }
-
+.card-img-mountains{
+  width: 100%;
+  float: left;
+  margin-right: -100px;
+  position: relative;
+  background-image:url("assets/images/mountains/cadillac.jpg")
+}
 
 
 
